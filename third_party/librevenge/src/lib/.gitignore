@@ -1,0 +1,10 @@
+.deps
+.libs
+*.lo
+*.la
+*.o
+*.rc
+Makefile
+Makefile.in
+librevenge.h
+librevenge-stream.h
