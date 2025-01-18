@@ -30,22 +30,21 @@ cdr2svg is a Docker-based tool for converting CorelDRAW files (.cdr) into SVG fo
     - `cdr2svg /data/sample.cdr`: Specifies the CorelDRAW file within the mounted directory.
     - `> output.svg`: Redirects the SVG output to your local directory.
 
-## Included Libraries
+## Third-Party Libraries
 
 This tool relies on the following libraries, which are bundled into the Docker image to ensure compatibility and long-term accessibility:
+- libcdr `git clone git://gerrit.libreoffice.org/libcdr`: Parses CorelDRAW file formats and provides the backbone for file processing.
+- librevenge `git clone git://git.code.sf.net/p/libwpd/librevenge`: Provides utilities for interpreting and generating vector graphic formats, including the librevenge-generators and librevenge-stream modules.
 
-- [**libcdr**](git://gerrit.libreoffice.org/libcdr): Parses CorelDRAW file formats and provides the backbone for file processing.
-- [**librevenge**](git://git.code.sf.net/p/libwpd/librevenge): Provides utilities for interpreting and generating vector graphic formats. Includes librevenge-generators and librevenge-stream modules.
-
-The Docker image automatically clones and builds these libraries during the build process.
+The Docker image automatically clones and builds these libraries during the build process to ensure all dependencies are met.
 
 ## Modifications
 
 This project is based on the original cdr2xhtml tool but has been modified to:
 
-1.Output SVG content directly rather than XHTML with embedded SVG.
-2.Simplify and adapt the tool for modern workflows.
-3.Package it into a portable Docker image.
+1. Output SVG content directly rather than XHTML with embedded SVG.
+2. Simplify and adapt the tool for modern workflows.
+3. Package it into a portable Docker image.
 
 The source code for cdr2svg is located in src/cdr2svg.cpp within the repository.
 
